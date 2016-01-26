@@ -10,6 +10,10 @@
   margin-top: 20px;
 }
 
-.city-head, .date-range, h1 {
+#shown-city-head, #shown-date-range, h1 {
   text-align: center;
+}
+
+.description {
+  margin-top: 15px;
 }

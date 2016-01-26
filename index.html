@@ -13,28 +13,29 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <h2 class="city-head">Ventura</h2>
-            <p class="date-range">1991 - 2007</p>
+          <h2 class="city-head" style="visibility: hidden">Ventura</h2>
+          <p class="date-range" style="visibility: hidden">1991 - 2007</p>
           <img class="crop-img" src="ventura-county.jpg" alt="Ventura County"/>
         </div>
         <div class="col-md-4">
-          <h2 class="city-head">Kansas City</h2>
-            <p class="date-range">2007 - 2015</p>
+          <h2 class="city-head" style="visibility: hidden">Kansas City</h2>
+          <p class="date-range" style="visibility: hidden">2007 - 2015</p>
           <img class="crop-img" src="kansas-city.jpg" alt="Kansas City"/>
         </div>
         <div class="col-md-4">
-          <h2 class="city-head">Boston</h2>
-            <p class="date-range">2015 - current</p>
+          <h2 class="city-head" style="visibility: hidden">Boston</h2>
+          <p class="date-range" style="visibility: hidden">2015 - current</p>
           <img class="crop-img" src="boston-city.jpg" alt="Boston City"/>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-8">
           <img class="large-img" alt="Ventura County" />
-          <p id="">
-
-          </p>
+        </div>
+        <div class="col-md-4 description">
+          <h2 id="shown-city-head">Ventura</h2>
+          <p id="shown-date-range">1991 - 2007</p>
         </div>
       </div>
     </div>
@@ -42,6 +43,10 @@
     <script type="text/javascript">
       $(".crop-img").click(function() {
         $(".large-img").attr("src", $(this).attr("src"));
+        var header = $(this).siblings(".city-head").html();
+        var dateRange = $(this).siblings(".date-range").html();
+        $("#shown-city-head").html(header);
+        $("#shown-date-range").html(dateRange);
       });
 
       $("img").first().click();
